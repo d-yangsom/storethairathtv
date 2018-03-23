@@ -19,5 +19,5 @@ password: project1234
 []work-flow of storethairathtv
 [*]Create databases
 [*]Create/design homepage 
-
+[*]connected database:'storetharathtv'
 //-----------------------------------------------------------------------------------

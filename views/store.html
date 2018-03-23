@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang='th'>
+<head>
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>โปรแกรมการเบิกจ่ายรายวัน</title>
+</head>
+<body>
+<!--
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+	<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">THAIRATHTV 32HD</a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    	<ul class="navbar-nav px-3">
+        	<li class="nav-item text-nowrap">
+          		<a class="nav-link" href="#">Sign out</a>
+        	</li>
+      	</ul>
+</nav>
+-->
+<!-- End of Header -->
+<nav class="navbar navbar-dark bg-dark justify-content-end fixed-top ">
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active text-secondary" href="/store">หน้าหลัก</a>
+  </li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-secondary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ตั้งค่าระบบบ</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">แก้ไขข้อมูลส่วนตัว</a>
+      <a class="dropdown-item" href="#">เพิ่มสมาชิก</a>
+  	  <a class="dropdown-item" href="#">ลืมรหัสผ่าน</a>  
+	<!-- <div class="dropdown-divider"></div>-->
+      <!--<a class="dropdown-item" href="#">ยืนยัน Logout</a>-->
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-secondary" href="#">ข้อมูลผู้ใช้</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-secondary" href="#">ล็อกอิน</a>
+  </li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-secondary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ออกจากระบบ</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">ยืนยัน Logout</a>
+      <!-- <div class="dropdown-divider"></div>-->
+      <!--<a class="dropdown-item" href="#">ยืนยัน Logout</a>-->
+    </div>
+  </li>
+</ul>
+</nav><br><br><br>
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+<div class='container-fluid'>
+<div class='row'>
+  		<div class="col-2">
+    		<div class="list-group" id="list-tab" role="tablist">
+<!-- <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><i class='fa fa-home fa-1x'></i>&nbsp;&nbsp;หน้าหลัก</a>-->
+<a class="list-group-item list-group-item-action active" id="list-cameara-list" data-toggle="list" href="#list-camera" role="tab" aria-controls="camera"><i class="fa fa-video-camera fa-1x"></i>&nbsp;&nbsp;กล้อง</a>
+<a class="list-group-item list-group-item-action" id="list-battery-list" data-toggle="list" href="#list-battery" role="tab" aria-controls="battery"><i class='fa fa-battery-full fa-1x'></i>&nbsp;&nbsp;แบตเตอร์รี่</a>
+<a class="list-group-item list-group-item-action" id="list-card-list" data-toggle="list" href="#list-card" role="tab" aria-controls="card"><i class='fa fa-files-o fa-1x'></i>&nbsp;&nbsp;การ์ดบันทึก</a>
+<a class="list-group-item list-group-item-action" id="list-tripod_big-list" data-toggle="list" href="#list-tripod_big" role="tab" aria-controls="tripod_big"><i class='fa fa-camera fa-1x'></i>&nbsp;&nbsp;ขาตั้งกล้องใหญ่</a>
+<a class="list-group-item list-group-item-action" id="list-mic_wireless-list" data-toggle="list" href="#list-mic_wireless" role="tab" aria-controls="mic_wireless"><i class='fa fa-microphone fa-1x'></i>&nbsp;&nbsp;ชุดไมค์ไร้สาย</a>
+<a class="list-group-item list-group-item-action" id="list-mic_cable-list" data-toggle="list" href="#list-mic_cable" role="tab" aria-controls="mic_cable"><i class='fa fa-microphone fa-1x'></i>&nbsp;&nbsp;ชุดไมค์สาย</a>
+<a class="list-group-item list-group-item-action" id="list-tripod_small-list" data-toggle="list" href="#list-tripod_small" role="tab" aria-controls="tripod_small"><i class='fa fa-camera fa-1x'></i>&nbsp;&nbsp;ขาตั้งกล้องเล็ก</a>
+<a class="list-group-item list-group-item-action" id="list-mic_head-list" data-toggle="list" href="#list-mic_head" role="tab" aria-controls="mic_head"><i class='fa fa-microphone fa-1x'></i>&nbsp;&nbsp;ชุดไมค์หัวกล้อง</a>
+<a class="list-group-item list-group-item-action" id="list-light_indoor-list" data-toggle="list" href="#list-light_indoor" role="tab" aria-controls="light_indoor"><i class='fa fa-sun-o fa-1x'></i>&nbsp;&nbsp;ไฟชุดเล็ก</a>
+<a class="list-group-item list-group-item-action" id="list-light_outdoor-list" data-toggle="list" href="#list-light_outdoor" role="tab" aria-controls="light_outdoor"><i class='fa fa-sun-o fa-1x'></i>&nbsp;&nbsp;ไฟชุดใหญ่</a>
+<a class="list-group-item list-group-item-action" id="list-monitor-list" data-toggle="list" href="#list-monitor" role="tab" aria-controls="monitor"><i  class='fa fa-television fa-1x'></i>&nbsp;&nbsp;จอมอร์นิเตอร์</a>
+<a class="list-group-item list-group-item-action" id="list-cell-list" data-toggle="list" href="#list-cell" role="tab" aria-controls="cell"><i class='fa fa-battery fa-1x'></i>&nbsp;&nbsp;ถ่านชาร์ต</a>
+<a class="list-group-item list-group-item-action" id="list-cell_spare-list" data-toggle="list" href="#list-cell_spare" role="tab" aria-controls="cell_spare"><i class='fa fa-battery fa-1x'></i>&nbsp;&nbsp;แบตเตอร์รี่สำรอง</a>
+<a class="list-group-item list-group-item-action" id="list-crane_dolly-list" data-toggle="list" href="#list-crane_dolly" role="tab" aria-controls="crane_dolly"><i class='fa fa-camera fa-1x'></i>&nbsp;&nbsp;เครน/ดอลลี่</a>
+<a class="list-group-item list-group-item-action" id="list-charge_battery-list" data-toggle="list" href="#list-charge_battery" role="tab" aria-controls="charge_battery"><i class='fa fa-battery-half fa-1x'></i>&nbsp;&nbsp;แทนชาร์ตแบตเตอร์รี่</a>
+<a class="list-group-item list-group-item-action" id="list-charge_cell-list" data-toggle="list" href="#list-charge_cell" role="tab" aria-controls="charge_cell"><i class='fa fa-battery-half fa-1x'></i>&nbsp;&nbsp;แทนชาร์ตถ่าน</a>
+<a class="list-group-item list-group-item-action" id="list-lens600_250-list" data-toggle="list" href="#list-lens600_250" role="tab" aria-controls="lens600_250"><i class='fa fa-video-camera fa-1x'></i>&nbsp;&nbsp;เลนส์กล้อง 600/250</a>
+<a class="list-group-item list-group-item-action" id="list-lens_c100-list" data-toggle="list" href="#list-lens_c100" role="tab" aria-controls="lens_c100"><i class='fa fa-video-camera fa-1x'></i>&nbsp;&nbsp;เลนส์กล้อง C100</a>
+<a class="list-group-item list-group-item-action" id="list-laptop-list" data-toggle="list" href="#list-laptop" role="tab" aria-controls="laptop"><i class="fa fa-desktop fa-1x" ></i>&nbsp;&nbsp;คอมพิวเตอร์</a>
+<a class="list-group-item list-group-item-action" id="list-mobile-list" data-toggle="list" href="#list-mobile" role="tab" aria-controls="mobile"><i class='fa fa-mobile fa-2x'></i>&nbsp;&nbsp;มือถือ</a>
+<a class="list-group-item list-group-item-action" id="list-transmission-list" data-toggle="list" href="#list-transmission" role="tab" aria-controls="transmission"><i class='fa fa-mobile fa-2x'></i>&nbsp;&nbsp;อุปกรณ์สื่อสาร</a>
+<a class="list-group-item list-group-item-action" id="list-accessories_1-list" data-toggle="list" href="#list-accessories_1" role="tab" aria-controls="accessories_1"><i class='fa fa-cogs fa-1x'></i>&nbsp;&nbsp;อุปกรณ์เสริมประเภทที่ 1</a>
+<a class="list-group-item list-group-item-action" id="list-accessories_2-list" data-toggle="list" href="#list-accessories_2" role="tab" aria-controls="accessories_2"><i class='fa fa-cogs fa-1x'></i>&nbsp;&nbsp;อุปกรณ์เสริมประเภทที่ 2</a>
+<a class="list-group-item list-group-item-action" id="list-accessories_3-list" data-toggle="list" href="#list-accessories_3" role="tab" aria-controls="accessories_3"><i class='fa fa-cogs fa-1x'></i>&nbsp;&nbsp;อุปกรณ์เสริมประเภทที่ 3</a>
+	</div>
+</div>
+<div class="col-8">
+ <div class="tab-content" id="nav-tabContent">
+		 <!-- <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">หน้าหลัก</div>-->
+	<div class="tab-pane fade show active" id="list-camera" role="tabpanel" aria-labelledby="list-camera-list">
+		<!-- 
+		<div class='card-deck'>
+            <div class="card" style='width: 18rem;'>
+            <img class="img-thumbnail" src='img_200x200.jpg'>	
+                <div class="card-body"><p class="card-title text-center">กล้อง 250</p></div>
+                <div class="card-footer">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="0">
+                    	<div class="input-group-append">
+                     		<button class="btn btn-outline-primary" type="button">เพิ่มลงตะกร้า</button>
+                    	</div>
+                 	</div>
+                </div>
+            </div>
+            <div class="card" style='width: 18rem;'>
+            <img class="img-thumbnail" src='img_200x200.jpg'>
+                <div class="card-body"><p class="card-title text-center">กล้อง 255</p></div>
+                <div class="card-footer">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="0">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style='width: 18rem;'>
+            <img class="img-thumbnail" src='img_200x200.jpg'>
+                <div class="card-body"><p class="card-title text-center">กล้อง 270</p></div>
+                <div class="card-footer">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="0">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style='width: 18rem;'>
+            <img class="img-thumbnail" src='img_200x200.jpg'>
+                <div class="card-body"><p class="card-title text-center">กล้อง AC90</p></div>
+                <div class="card-footer">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="0">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<br>
+-->
+<!--
+		 <div class='card-deck'> 
+            <div class="card" style='width: 18rem;'>
+            <img class="img-thumbnail" src='img_200x200.jpg'>
+				<div class="card-body"><h5 class="card-title text-center">กล้อง 600</h5></div>
+                <div class="card-footer">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="0">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style='width: 18rem;'>
+            <img class="img-thumbnail" src='img_200x200.jpg'>                
+				<div class="card-body"><h5 class="card-title text-center">กล้อง Gopro5</h5></div>
+                <div class="card-footer">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="0">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style='width: 18rem;'>
+            <img class="img-thumbnail" src='img_200x200.jpg'>                
+			<div class="card-body"><h5 class="card-title text-center">กล้อง C100</h5></div>
+                <div class="card-footer">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="0">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           	<div class="card" style='width: 18rem;'>
+            <img class="img-thumbnail" src='img_200x200.jpg'>
+				<div class="card-body"><h5 class="card-title text-center">กล้อง 70D</h5></div>
+                <div class="card-footer">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="0">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button">เพิ่มลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+<br>
+-->
+
+<div class="card" style='width: 18rem;'>
+	<div class="card-body">
+    	<p class='text-center'>กล้องวิดีโอ Panasonic 250</p>
+    </div>
+    <img class="img-thumbnail" src='img_200x200.jpg'>
+    <div class="card-footer">
+    	<div class="input-group">
+       		<input type="text" class="form-control" placeholder="0" id='item01'>
+            	<div class="input-group-append">
+             		<button class="btn btn-outline-primary" type="button" onclick='add_itemcam255()'>เพิ่มลงตะกร้า</button>
+                </div>
+       	</div>
+    </div>
+	</div>
+</div><!-- camera-->
+	<div class="tab-pane fade" id="list-battery" role="tabpanel" aria-labelledby="list-battery-list">แบตตา</div>
+	<div class="tab-pane fade" id="list-card" role="tabpanel" aria-labelledby="list-card-list">การ์ดบันทึก</div>
+	<div class="tab-pane fade" id="list-tripod_big" role="tabpanel" aria-labelledby="list-tripod_big">ขาตั้งกล้องใหญ่</div>
+	<div class="tab-pane fade" id="list-mic_wireless" role="tabpanel" aria-labelledby="list-mic_wireless-list">ชุดไมค์ไร้ส</div>
+	<div class="tab-pane fade" id="list-xx" role="tabpanel" aria-labelledby="list-xx-"></div>
+</div>
+</div>
+	<div class='col-2 border border-success'>
+		<h1>แสดงรายการ</h1>				
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">รายการที่เลือก</th>
+      <th scope="col">จำนวน</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td id='showUnit'></td>
+    </tr>
+  </tbody>
+</table>
+	</div>
+	</div><!-- End row -->
+</div><!-- End of row content-->
+<!-- -----------------------------------------------------------------------------------------------------------------------------  -->
+<!-- Footer -->
+<script>
+	function add_itemcam255(){
+		var itemCam01 = + $('#item01').val()
+		$('#item01').val('')
+	if((itemCam01 >= 0) && (itemCam01 <100)){
+		$('#showUnit').html(itemCam01)
+	}else{
+		alert('กรุณากรอกเฉพาะตัวเลขจำนวนไม่เกิน 100' )
+	}
+	
+}
+</script>
+<script>
+	function addCard(x){
+		var  count = + $('#countCard').text()
+			count = count + x
+			if(count <= 0){ 
+				alert('ไม่มีข้อมูล') 
+			}
+			if(count >= 0){
+				$('#countCard').text(count)
+			}
+	}
+</script>
+<script>
+	function sel_cam(){
+		var selectCamera = $('#selectCamera').val()
+		if('0' == selectCamera){
+			$('#showData').html(selectCamera)
+		}
+	}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		</body>
+</html>

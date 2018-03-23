@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang='th'>
 		<head>
 			<meta charset='utf-8'>
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
 <title>โปรแกรมการเบิกจ่ายรายวัน</title>
-		</head>
+</head>
 		<body>
-			<h1>It's work by dreamz carter</h1>
+			<div class='container'> 
+				<div class='row'>
+					<div class='col'>
+						<nav class='nav navbar-dark bg-primary navbar-expand-lg'>
+						<a class='navbar-brand' href='/'>ไทยรัฐทีวี</a>
+						</nav>
+					</div>
+				</div>
+<!-- End of Header -->
+
+				<div class='row'>
+  					<div class="col-4">
+    					<div class="list-group" id="list-tab" role="tablist">
+      						<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">หน้าหลัก</a>
+      						<a class="list-group-item list-group-item-action" id="list-cameara-list" data-toggle="list" href="#list-camera" role="tab" aria-controls="camera">กล้อง</a>
+      						<a class="list-group-item list-group-item-action" id="list-battery-list" data-toggle="list" href="#list-battery" role="tab" aria-controls="battery">แบตตารี่</a>
+      						<a class="list-group-item list-group-item-action" id="list-card-list" data-toggle="list" href="#list-card" role="tab" aria-controls="card">การ์ดบันทึก</a>
+    					</div>
+  					</div>
+  					<div class="col-8">
+    					<div class="tab-content" id="nav-tabContent">
+      						<div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">หน้าหลัก</div>
+      						<div class="tab-pane fade" id="list-camera" role="tabpanel" aria-labelledby="list-camera-list">กล้อง</div>
+      						<div class="tab-pane fade" id="list-battery" role="tabpanel" aria-labelledby="list-battery-list">แบตตารี่</div>
+      						<div class="tab-pane fade" id="list-card" role="tabpanel" aria-labelledby="list-card-list">การ์ดบันทึก</div>
+    				</div>
+  				</div>
+			</div>
+
+
+
+<!-- Footer -->
+				<div class='row'>
+					<div class='col border border-dark'>footer</div>
+				</div>
+			</div><!-- End of container-->
+<!-- <script>
+	$('#listMenu').on('click',function(e){
+	e.preventDefault()
+	$(this).tab('show')
+})
+	
+    $('#listMenu a[href='list-home']').tab('show')
+    $('#listMenu a[href='list-camera']').tab('show')
+</script>-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		</body>
 </html>

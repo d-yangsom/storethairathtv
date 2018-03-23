@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Camera</title>
+	</head>
+	<body>
+			<h1>Show camera</h1>
+			<i><%= result%></i>
+			<% for(var i of result ){ %>
+			<%= i %><br>
+			<% } %>
+			<hr>
+			<% result.forEach(function(c){%>
+			<%= c.id %> <%= c.name %> <%= c.tvb %><br>
+			<% }) %>
+	</body>
+</html>
